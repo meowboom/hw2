@@ -7,7 +7,6 @@ const TableBody = ({ data, columns }) => {
         if (columns[column].component) {
             const component = columns[column].component;
             if (typeof component === "function") {
-                console.log(item);
                 return component(item);
             }
             return component;

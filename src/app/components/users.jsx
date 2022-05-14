@@ -9,19 +9,22 @@ import api from "../api";
 import Loader from "./loader";
 
 const Users = ({ users: allUsers, ...rest }) => {
-    const pageSize = 4;
     const [currentPage, setCurrentPage] = useState(1);
     const [profession, setProfession] = useState();
     const [selectedProf, setSelectedProf] = useState();
-    const handlProfessionSelect = (item) => {
-        setSelectedProf(item);
-    };
+
+    const pageSize = 4;
     useEffect(() => {
         api.professions.fetchAll().then((data) => setProfession(data));
     }, []);
     useEffect(() => {
         setCurrentPage(1);
     }, [selectedProf]);
+
+    const handlProfessionSelect = (item) => {
+        setSelectedProf(item);
+    };
+
     const handlePageChange = (pageIndex) => {
         setCurrentPage(pageIndex);
     };

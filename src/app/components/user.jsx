@@ -26,12 +26,7 @@ const User = ({
             <td>{profession.name}</td>
             <td>{completedMeetings}</td>
             <td>{rate} /5</td>
-            <td>
-                <BookMark
-                    status={bookmark}
-                    onClick={() => onToggleBookMark(_id)}
-                />
-            </td>
+            <td></td>
             <td>
                 <button
                     onClick={() => onDelete(_id)}
